@@ -132,8 +132,8 @@ php think seed:create UserSeeder
 php think seed:run
 ```
 
-> 默认Phinx会执行所有 seed。 如果你想要指定执行一个，只要增加 -s 参数并接 seed 的名字
+> 默认Phinx会执行所有 seed。 如果你想要指定执行一个，只要增加 --s 参数并接 seed 的名字
 
 ```
-php think seed:run -s UserSeeder
+php think seed:run --s UserSeeder
 ```
