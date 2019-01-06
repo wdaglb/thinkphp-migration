@@ -1,5 +1,7 @@
 # thinkphp-migration
 
+## 要求ThinkPHP 5.1.*
+
 > 本扩展与官方的区别是什么？
 
 _支持最新的phinx扩展,直接composer更新而不是固定死版本_
