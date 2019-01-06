@@ -20,7 +20,7 @@
         "topthink/framework": "*"
     },
     "autoload": {
-        "psr-4": {"ke\\": "src/"},
+        "psr-4": {"ke\\phinx\\": "src/"},
         "files": ["src/bootstrap.php"]
     }
 }
