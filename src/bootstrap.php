@@ -10,6 +10,9 @@ if (class_exists(\think\Console::class)) {
         \ke\phinx\command\Run::class,
         \ke\phinx\command\Create::class,
         \ke\phinx\command\Status::class,
-        \ke\phinx\command\Rollback::class
+        \ke\phinx\command\Rollback::class,
+        \ke\phinx\command\Breakpoint::class,
+        \ke\phinx\command\seed\Create::class,
+        \ke\phinx\command\seed\Run::class
     ]);
 }

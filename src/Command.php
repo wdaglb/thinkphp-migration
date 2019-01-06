@@ -22,6 +22,9 @@ class Command extends \think\console\Command
             throw new Exception('migration config is Empty');
         }
         $base_dir = App::getRootPath() . 'db/';
+        if (!is_dir($base_dir)) {
+            throw new Exception('path notExist:db/migrates;db/seeds');
+        }
         $config = array_merge([
             'paths'=>[
                 'migrations'=>$base_dir . 'migrations',
