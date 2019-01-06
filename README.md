@@ -1,5 +1,13 @@
 # thinkphp-migration
 
+> 本扩展与官方的区别是什么？
+
+_支持最新的phinx扩展,直接composer更新而不是固定死版本_
+
+_为什么不直接使用phinx包?因为使用命令需要vendor\bin\phinx,还有配置文件也要自定义,本扩展已支持加载tp的数据库配置_
+
+_由于tp内置的命令行选项是2个-的，所以我们的命令都会成 php think migrate:run --e dev 这样子的选项_
+
 ```
 composer require ke/thinkphp-migration
 ```
