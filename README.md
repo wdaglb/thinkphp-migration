@@ -30,7 +30,7 @@ return [
 
 ## Breakpoint 命令
 
-> Breakpoint 命令用来设置断点，可以使你对回滚进行限制。你可以调用 breakpoint 命令不带任何参数，即将断点设在最新的迁移脚本上
+> Breakpoint 命令用来设置断点，可以使你对回滚进行限制。你可以调用 breakpoint 命令不带任何参数，也就是断点设在最新的迁移脚本上
 
 ```
 php think migrate:breakpoint --e development
@@ -104,3 +104,26 @@ php think migrate:rollback --e development --d 201201031205
 php think migrate:rollback ---e development --d 20120103120530
 ```
 
+## 创建Seed类
+
+> 不像数据库迁移，Phinx 并不记录 seed 是否执行过。这意味着 seeders 可以被重复执行。请在开发的时候记住
+
+> Phinx 用下面命令创建一个新的 seed 类
+
+```
+php think seed:create UserSeeder
+```
+
+## 执行 Seed
+
+> 这很简单，当注入数据库时，只需要运行 seed:run 命令
+
+```
+php think seed:run
+```
+
+> 默认Phinx会执行所有 seed。 如果你想要指定执行一个，只要增加 -s 参数并接 seed 的名字
+
+```
+php think seed:run -s UserSeeder
+```
