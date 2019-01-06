@@ -1,6 +1,6 @@
 # thinkphp-migration
 
-**要求ThinkPHP 5.1.**
+**要求ThinkPHP 5.1.***
 
 > 本扩展与官方的区别是什么？
 
