@@ -4,6 +4,31 @@
 composer require ke/thinkphp-migration
 ```
 
+## Config 配置文件
+
+```
+[
+            'paths'=>[
+                'migrations'=>$base_dir . 'migrations',
+                'seeds'=>$base_dir . 'seeds',
+            ],
+            'environments'=>[
+                'default_migration_table'=>'phinxlog',
+                'default_database'=>'default',
+                'default'=>[
+                    'adapter'=>'mysql',
+                    'host'=>'127.0.0.1',
+                    'name'=>'',
+                    'user'=>'',
+                    'pass'=>'',
+                    'table_prefix'=>'',
+                    'port'=>3306,
+                    'charset'=>'utf8',
+                    'collation'=>'utf8mb4_unicode_ci'
+                ]
+            ]
+]
+```
 
 ## Breakpoint 命令
 
