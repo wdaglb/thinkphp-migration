@@ -35,7 +35,6 @@ class Run extends Command
         $configPath = $this->initConfig();
 
 
-        $command = $input->getArgument('name');
         $app = new PhinxApplication();
 
         // Output will be written to a temporary stream, so that it can be
@@ -45,7 +44,6 @@ class Run extends Command
         // Execute the command, capturing the output in the temporary stream
         // and storing the exit code for debugging purposes.
         $commands = ['seed:run'];
-        $commands += ['name'=>$command];
         $commands += ['-c'=>$configPath];
         if ($input->hasOption('s')) {
             $commands += ['-s'=>$input->getOption('s')];
