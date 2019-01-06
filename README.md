@@ -7,6 +7,7 @@ composer require ke/thinkphp-migration
 ## Config 配置文件
 
 ```
+// /config/migration.php
 [
     'environments'=>[
         'default_migration_table'=>'phinxlog',
