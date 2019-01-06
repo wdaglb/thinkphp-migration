@@ -1,0 +1,12 @@
+{
+    "name": "ke/thinkphp-migration",
+    "authors": [
+        {
+            "name": "king east",
+            "email": "1207877378@qq.com"
+        }
+    ],
+    "require": {
+        "robmorgan/phinx": "^0.10.6"
+    }
+}
