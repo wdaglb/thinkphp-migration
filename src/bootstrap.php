@@ -1,11 +1,15 @@
 <?php
 // +----------------------------------------------------------------------
-// | 商城v2
+// | ke/thinkphp-migration
 // +----------------------------------------------------------------------
 // | Author: King east <1207877378@qq.com>
 // +----------------------------------------------------------------------
 
-\think\Console::addDefaultCommands([
-    \ke\phinx\command\Run::class,
-    \ke\phinx\command\Create::class
-]);
+if (class_exists(\think\Console::class)) {
+    \think\Console::addDefaultCommands([
+        \ke\phinx\command\Run::class,
+        \ke\phinx\command\Create::class,
+        \ke\phinx\command\Status::class,
+        \ke\phinx\command\Rollback::class
+    ]);
+}

@@ -21,13 +21,13 @@ use think\console\Output;
  * Class Phinx
  * @package app\command
  *
- * php think migrate:run --e integral
+ * php think migrate:status
  */
-class Run extends Command
+class Status extends Command
 {
     protected function configure()
     {
-        return $this->setName('migrate:run')
+        return $this->setName('migrate:status')
             ->addOption('e', null, Option::VALUE_OPTIONAL, 'env')
             ->addOption('t', null, Option::VALUE_OPTIONAL, 'target');
     }
@@ -42,17 +42,6 @@ class Run extends Command
         $wrap = new TextWrapper($app, [
             'configuration'=>$configPath
         ]);
-//        $routes = [
-//            'status' => 'getStatus',
-//            'migrate' => 'getMigrate',
-//            'rollback' => 'getRollback',
-//        ];
-
-//        if (!isset($routes[$command])) {
-//            $commands = implode(', ', array_keys($routes));
-//            $output->writeln("Command not found! Valid commands are: {$commands}.");
-//            die;
-//        }
 
         $env = null;
         if ($input->hasOption('e')) {
@@ -63,7 +52,7 @@ class Run extends Command
             $target = $input->getOption('t');
         }
 
-        echo call_user_func([$wrap, 'getMigrate'], $env, $target);
+        echo call_user_func([$wrap, 'getStatus'], $env, $target);
     }
 
 }

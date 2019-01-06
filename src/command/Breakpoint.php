@@ -18,12 +18,14 @@ use think\console\input\Argument;
 use think\console\input\Option;
 use think\console\Output;
 
-class Create extends Command
+class Breakpoint extends Command
 {
     protected function configure()
     {
-        $this->setName('migrate:create')
-            ->addArgument('name', Argument::OPTIONAL, 'migrate_name');
+        $this->setName('migrate:breakpoint')
+            ->addOption('e', null, Option::VALUE_OPTIONAL, 'env')
+            ->addOption('r', null, Option::VALUE_OPTIONAL, 'all')
+            ->addOption('t', null, Option::VALUE_OPTIONAL, 'target');
     }
 
     protected function execute(Input $input, Output $output)
@@ -32,7 +34,6 @@ class Create extends Command
         $configPath = $this->initConfig();
 
 
-        $command = $input->getArgument('name');
         $app = new PhinxApplication();
 
         // Output will be written to a temporary stream, so that it can be
@@ -41,10 +42,17 @@ class Create extends Command
 
         // Execute the command, capturing the output in the temporary stream
         // and storing the exit code for debugging purposes.
-        $commands = ['create'];
-        $commands += ['name'=>$command];
+        $commands = ['breakpoint'];
         $commands += ['-c'=>$configPath];
-        $commands += ['--template'=>__DIR__ . '/../template/Create.php.dist'];
+        if ($input->hasOption('e')) {
+            $commands += ['-e'=>$input->getOption('e')];
+        }
+        if ($input->hasOption('t')) {
+            $commands += ['-t'=>$input->getOption('t')];
+        }
+        if ($input->hasOption('r')) {
+            $commands += ['-r'];
+        }
 
         $exit_code = $app->doRun(new ArrayInput($commands), new StreamOutput($stream));
 

@@ -1,5 +1,12 @@
 {
     "name": "ke/thinkphp-migration",
+    "type": "library",
+    "keywords": [
+        "phinx",
+        "migration",
+        "migrate"
+    ],
+    "description": "database migration tools",
     "authors": [
         {
             "name": "king east",
@@ -8,5 +15,12 @@
     ],
     "require": {
         "robmorgan/phinx": "^0.10.6"
+    },
+    "require-dev":  {
+        "topthink/framework": "*"
+    },
+    "autoload": {
+        "psr-4": {"ke\\": "src/"},
+        "files": ["src/bootstrap.php"]
     }
 }
