@@ -13,7 +13,7 @@ _由于tp内置的命令行选项是2个-的，所以我们的命令都会成 ph
 ## 安装
 
 ```
-composer require ke/thinkphp-migration dev-master
+composer require ke/thinkphp-migration
 ```
 
 ## Config 配置文件
