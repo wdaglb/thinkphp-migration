@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "robmorgan/phinx": "^0.10.6"
+        "robmorgan/phinx": "^0.11.0"
     },
     "require-dev":  {
         "topthink/framework": "*"
