@@ -25,7 +25,7 @@ class Run extends Command
     protected function configure()
     {
         $this->setName('seed:run')
-            ->addOption('s', null, Option::VALUE_OPTIONAL, 'seed_name')
+            ->addOption('s', null, Option::VALUE_OPTIONAL | Option::VALUE_IS_ARRAY, 'seed_name')
             ->addOption('v', null, Option::VALUE_OPTIONAL, 'seed_info');
     }
 
